@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, PlayCircle } from "lucide-react";
 
 export default function Hero() {
     return (
@@ -10,23 +10,23 @@ export default function Hero() {
             <div className="container relative z-10 mx-auto px-4 text-center md:text-left">
                 <div className="max-w-2xl">
                     <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                        Innovating <span className="text-agri-accent">Agriculture</span> for a Sustainable Future
+                        Grow Right, <span className="text-agri-accent">Grow Safe</span>
                     </h1>
                     <p className="mt-6 text-lg text-agri-lines sm:text-xl text-gray-200">
-                        Advanced crop care solutions, precision monitoring, and sustainable farming practices designed to maximize your yield.
+                        The AgriFlux CropCare Portal guides you through every step of farming - from correct fertilizer use to safe harvest practices.
                     </p>
                     <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-start">
                         <Link
-                            href="#contact"
+                            href="/select-crop"
                             className="inline-flex h-12 items-center justify-center rounded-md bg-agri-accent px-8 text-sm font-medium text-agri-dark shadow transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                         >
-                            Consult Now
+                            Get Started
                         </Link>
                         <Link
-                            href="#services"
+                            href="#"
                             className="inline-flex h-12 items-center justify-center rounded-md border border-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-white hover:text-agri-dark focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                         >
-                            Our Services <ArrowRight className="ml-2 h-4 w-4" />
+                            <PlayCircle className="mr-2 h-4 w-4" /> How It Works
                         </Link>
                     </div>
                 </div>

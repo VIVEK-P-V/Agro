@@ -1,4 +1,7 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    env: {
+        GFORM: process.env.GFORM,
+    },
+};
 
 export default nextConfig;

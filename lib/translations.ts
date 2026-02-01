@@ -40,6 +40,13 @@ export const TRANSLATIONS = {
             about: "About Us",
             home: "Home",
             rights: "AgriFlux Crop Care. All rights reserved."
+        },
+        planning: {
+            btn: "How to Plant My Crop",
+            title: "Start Your Farming Journey",
+            desc: "Fill out this form to get personalized expert advice on planting, soil preparation, and initial care for your specific crop.",
+            openForm: "Open Planning Form",
+            cancel: "Cancel"
         }
     },
     HI: {
@@ -83,6 +90,13 @@ export const TRANSLATIONS = {
             about: "हमारे बारे में",
             home: "होम",
             rights: "एग्रीफ्लक्स क्रॉप केयर। सर्वाधिकार सुरक्षित।"
+        },
+        planning: {
+            btn: "मेरी फसल कैसे उगाएं",
+            title: "अपनी खेती की यात्रा शुरू करें",
+            desc: "अपनी विशिष्ट फसल के लिए रोपण, मिट्टी की तैयारी और प्रारंभिक देखभाल पर व्यक्तिगत विशेषज्ञ सलाह प्राप्त करने के लिए इस फॉर्म को भरें।",
+            openForm: "योजना फॉर्म खोलें",
+            cancel: "रद्द करें"
         }
     }
 };

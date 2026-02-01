@@ -1,11 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { ArrowRight, PlayCircle, Sprout } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useState } from "react";
+import PlanningModal from "./PlanningModal";
 
 export default function Hero() {
     const { t } = useLanguage();
+    const [isPlanningModalOpen, setIsPlanningModalOpen] = useState(false);
 
     return (
         <section className="relative overflow-hidden bg-agri-dark py-20 text-white md:py-32">
@@ -27,15 +30,21 @@ export default function Hero() {
                         >
                             {t.hero.cta}
                         </Link>
-                        <Link
-                            href="#"
+
+                        <button
+                            onClick={() => setIsPlanningModalOpen(true)}
                             className="inline-flex h-12 items-center justify-center rounded-md border border-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-white hover:text-agri-dark focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                         >
-                            <PlayCircle className="mr-2 h-4 w-4" /> {t.hero.watchVideo}
-                        </Link>
+                            <Sprout className="mr-2 h-4 w-4" /> {t.planning.btn}
+                        </button>
                     </div>
                 </div>
             </div>
+
+            <PlanningModal
+                isOpen={isPlanningModalOpen}
+                onClose={() => setIsPlanningModalOpen(false)}
+            />
         </section>
     );
 }

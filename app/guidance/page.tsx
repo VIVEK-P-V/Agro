@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { CROPS } from "@/lib/data";
+import { CROPS, getCropStages } from "@/lib/data";
 import { AlertTriangle, Droplets, Leaf } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from 'react';
@@ -21,6 +21,8 @@ function GuidanceContent() {
         return <div className="p-8 text-center">Crop not found</div>;
     }
 
+    const stages = crop.stages || getCropStages(crop.id);
+
     return (
         <div className="min-h-screen bg-gray-50 pb-20">
             {/* Header */}
@@ -28,7 +30,7 @@ function GuidanceContent() {
                 <div className="container mx-auto">
                     <Link href="/select-crop" className="text-agri-lines text-sm hover:underline mb-4 inline-block">&larr; Change Crop</Link>
                     <div className="flex items-center gap-4">
-                        <span className="text-4xl">{crop.image}</span>
+                        <span className="text-4xl">{crop.image || "🌱"}</span>
                         <div>
                             <h1 className="text-3xl font-bold">{crop.name} Guidance</h1>
                             <p className="text-agri-lines mt-1">
@@ -41,7 +43,7 @@ function GuidanceContent() {
 
             <div className="container mx-auto px-4 -mt-8">
                 <div className="space-y-8">
-                    {crop.stages.map((stage, index) => (
+                    {stages.map((stage, index) => (
                         <div key={stage.id} className="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-agri-main">
                             <div className="p-6 md:p-8">
                                 <div className="flex items-start justify-between mb-6">
@@ -63,8 +65,8 @@ function GuidanceContent() {
                                     <div className="mb-6 space-y-2">
                                         {stage.alerts.map((alert, idx) => (
                                             <div key={idx} className={`p-4 rounded-lg flex gap-3 ${alert.type === 'danger' ? 'bg-red-50 text-red-800 border Border-red-200' :
-                                                    alert.type === 'warning' ? 'bg-amber-50 text-amber-800 border border-amber-200' :
-                                                        'bg-blue-50 text-blue-800 border border-blue-200'
+                                                alert.type === 'warning' ? 'bg-amber-50 text-amber-800 border border-amber-200' :
+                                                    'bg-blue-50 text-blue-800 border border-blue-200'
                                                 }`}>
                                                 <AlertTriangle className="h-5 w-5 shrink-0" />
                                                 <span className="text-sm font-medium">{alert.message}</span>

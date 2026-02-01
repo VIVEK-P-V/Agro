@@ -1,4 +1,10 @@
+"use client";
+
+import { useLanguage } from "@/lib/LanguageContext";
+
 export default function About() {
+    const { t } = useLanguage();
+
     return (
         <section id="about" className="py-20 bg-white">
             <div className="container mx-auto px-4">
@@ -13,22 +19,22 @@ export default function About() {
                     </div>
                     <div className="w-full md:w-1/2">
                         <h2 className="text-3xl font-bold tracking-tight text-agri-dark sm:text-4xl mb-6">
-                            Cultivating Excellence Since 2010
+                            {t.about.title}
                         </h2>
                         <p className="text-gray-600 mb-6 leading-relaxed">
-                            At AgriFlux, we believe that the future of farming lies in the balance between nature and technology. Our mission is to provide farmers with tools that not only increase yield but also preserve the environment for future generations.
+                            {t.about.p1}
                         </p>
                         <p className="text-gray-600 mb-8 leading-relaxed">
-                            From small family-owned farms to large-scale agricultural operations, our solutions are scalable, sustainable, and supported by a team of dedicated agronomists.
+                            {t.about.p2}
                         </p>
                         <div className="grid grid-cols-2 gap-6">
                             <div>
                                 <h4 className="text-3xl font-bold text-agri-main">500+</h4>
-                                <p className="text-sm text-gray-500">Farms Served</p>
+                                <p className="text-sm text-gray-500">{t.about.stat1}</p>
                             </div>
                             <div>
                                 <h4 className="text-3xl font-bold text-agri-main">98%</h4>
-                                <p className="text-sm text-gray-500">Client Satisfaction</p>
+                                <p className="text-sm text-gray-500">{t.about.stat2}</p>
                             </div>
                         </div>
                     </div>
